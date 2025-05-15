@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Procedimientos</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.procedimiento.label }} {{ form.procedimiento() }}<br><br>
+    {{ form.tipo_falla.label }} {{ form.tipo_falla() }}<br><br>
+    {{ form.submit() }}
+</form>
+
+{% if resultado %}
+    {% if form.procedimiento.data == 'ActualizarBDCConCasosCerrados' %}
+        <table>
+        <tr>{% for col in resultado.columnas %}<th>{{ col }}</th>{% endfor %}</tr>
+        {% for fila in resultado.filas %}
+        <tr>{% for valor in fila %}<td>{{ valor }}</td>{% endfor %}</tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <table>
+            <tr>{% for col in resultado.columnas %}<th>{{ col }}</th>{% endfor %}</tr>
+            {% for fila in resultado.filas %}
+            <tr>{% for valor in fila %}<td>{{ valor }}</td>{% endfor %}</tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endif %}
+{% endblock %}
+

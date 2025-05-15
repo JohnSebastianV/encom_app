@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Seleccionar Vista</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.vista.label }} {{ form.vista() }}
+    {{ form.submit() }}
+</form>
+
+{% if columnas and filas %}
+    <h3>Resultados de {{ vista_nombre }}</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for col in columnas %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for fila in filas %}
+                <tr>
+                    {% for valor in fila %}
+                        <td>{{ valor }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}
+
+
+

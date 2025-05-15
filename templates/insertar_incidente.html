@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Insertar Incidente</h2>
+
+<form method="POST" class="form">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.descripcion.label }}<br>
+        {{ form.descripcion(class="form-control", rows="3") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.fecha_reporte.label }}<br>
+        {{ form.fecha_reporte(class="form-control", type="date") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.fecha_resolucion.label }}<br>
+        {{ form.fecha_resolucion(class="form-control", type="date") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.impacto_usuarios.label }}<br>
+        {{ form.impacto_usuarios(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_usuario.label }}<br>
+        {{ form.id_usuario(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_area.label }}<br>
+        {{ form.id_area(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_tipo_falla.label }}<br>
+        {{ form.id_tipo_falla(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_tecnico.label }}<br>
+        {{ form.id_tecnico(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_analista.label }}<br>
+        {{ form.id_analista(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group">
+        {{ form.id_evento_sectorial.label }}<br>
+        {{ form.id_evento_sectorial(class="form-control") }}
+        {% for error in form.descripcion.errors %}
+    <small class="text-danger">{{ error }}</small>
+{% endfor %}
+
+    </div>
+
+    <div class="form-group mt-3">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

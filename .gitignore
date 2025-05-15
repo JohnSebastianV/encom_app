@@ -1,0 +1,42 @@
+# Entornos virtuales
+.venv/
+venv/
+
+C/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos temporales
+*.log
+*.pot
+*.pyc
+*.pyd
+*.db
+*.sqlite3
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de usuario
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archivos de VSCode
+.vscode/
+
+# Archivos de entorno
+.env
+
+# Archivos compilados o de distribución
+build/
+dist/
+*.egg-info/
+
+# Archivos específicos de Windows
+C:\x3a\
